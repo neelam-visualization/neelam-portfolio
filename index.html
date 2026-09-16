@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,113 +13,242 @@
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+    
     body {
-      background-color: #0d0d20;
+      background-color: #070710;
       color: #e5e5e7;
-      padding: 30px;
-      line-height: 2.2;
+      padding: 40px 20px;
+      line-height: 2.0;
+      perspective: 1000px;
     }
+
     .container {
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto;
+      transform-style: preserve-3d;
+      animation: floatPage 1.5s ease-out;
     }
+
+    @keyframes floatPage {
+      0% {
+        opacity: 0;
+        transform: translateY(30px) rotateX(10deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+      }
+    }
+
     header {
       text-align: center;
-      padding: 30px 0 20px;
-      border-bottom: 1px solid #2a2a35;
+      padding: 40px 0 25px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
     }
+
+    /* ✨ NEELAM in Pure White with Crisp Outline & Seamless Motion */
     h1 {
-      font-size: 2.2rem;
-      color: #fff;
-      letter-spacing: 1px;
-    }
-    .subtitle {
-      color: #d4af37; /* Rose Gold / Luxury Accent */
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-top: 5px;
-    }
-    .bio {
-      font-size: 0.95rem;
-      color: #a1a1aa;
-      margin-top: 10px;
-    }
-    section {
-      margin: 30px 0;
-    }
-    h2 {
-      font-size: 1.3rem;
-      color: #fff;
-      margin-bottom: 15px;
-      border-left: 4px solid #d4af37;
-      padding-left: 10px;
-    }
-    .skills-list {
-      background: #181820;
-      padding: 18px 20px;
-      border-radius: 12px;
-      list-style-type: square;
-      padding-left: 35px;
-      border: 1px solid #262633;
-    }
-    .skills-list li {
-      margin-bottom: 8px;
-      color: #d1d1d6;
-    }
-    /* Project Card */
-    .project-card {
-      background: #181820;
-      border-radius: 14px;
+      font-size: 3.4rem;
+      font-weight: 900;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      display: inline-flex;
       overflow: hidden;
-      border: 1px solid #262633;
+    }
+
+    h1 span {
+      display: inline-block;
+      opacity: 0;
+      background: linear-gradient(135deg, #ffffff 0%, #f0f0f5 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      
+      /* 🔥 Clean White Outline with silver-ish depth */
+      -webkit-text-stroke: 1.5px #ffffff;
+      
+      /* Subtle white/silver clean glow */
+      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.25);
+      animation: seamlessMotion 4.5s cubic-bezier(0.15, 0.85, 0.35, 1.2) infinite alternate;
+    }
+
+    /* Staggered Delay for each letter's entry */
+    h1 span:nth-child(1) { animation-delay: 0.1s; }
+    h1 span:nth-child(2) { animation-delay: 0.2s; }
+    h1 span:nth-child(3) { animation-delay: 0.3s; }
+    h1 span:nth-child(4) { animation-delay: 0.4s; }
+    h1 span:nth-child(5) { animation-delay: 0.5s; }
+    h1 span:nth-child(6) { animation-delay: 0.6s; }
+
+    @keyframes seamlessMotion {
+      0% {
+        opacity: 0;
+        transform: translateX(-40px) translateY(10px) rotateY(-30deg);
+      }
+      25% {
+        opacity: 1;
+        transform: translateX(0) translateY(0) rotateY(0deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) translateY(-4px) rotateY(0deg);
+        text-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+      }
+    }
+
+    .subtitle {
+      color: #ffd700;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+      animation: fadeInSub 1.2s ease 1s both;
+    }
+
+    @keyframes fadeInSub {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .bio {
+      font-size: 1rem;
+      color: #d1d1d6;
+      margin-top: 12px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+      animation: fadeInBio 1.2s ease 1.2s both;
+    }
+
+    @keyframes fadeInBio {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      margin: 35px 0;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 18px;
+      border-left: 5px solid #ffd700;
+      padding-left: 12px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+      letter-spacing: 0.5px;
+    }
+
+    .skills-list, .project-card, .contact-box {
+      background: linear-gradient(135deg, rgba(24, 24, 32, 0.95), rgba(15, 15, 22, 0.98));
+      border-radius: 16px;
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .skills-list {
+      padding: 22px 25px;
+      list-style-type: square;
+      padding-left: 40px;
+    }
+
+    .skills-list li {
+      margin-bottom: 10px;
+      color: #e5e5e7;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+
+    .project-card {
+      overflow: hidden;
       text-decoration: none;
       color: inherit;
       display: block;
-      transition: transform 0.2s ease;
     }
+
+    .project-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.8),
+        0 0 25px rgba(255, 215, 0, 0.4);
+      border-color: rgba(255, 215, 0, 0.6);
+    }
+
     .project-card img {
       width: 100%;
-      height: 220px;
+      height: 230px;
       object-fit: cover;
       display: block;
+      transition: transform 0.5s ease;
     }
+
+    .project-card:hover img {
+      transform: scale(1.05);
+    }
+
     .project-info {
-      padding: 16px;
+      padding: 20px;
     }
+
     .project-title {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: bold;
       color: #fff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     }
+
     .project-btn {
       display: inline-block;
-      margin-top: 10px;
-      background: #d4af37;
+      margin-top: 14px;
+      background: linear-gradient(135deg, #ffd700, #ffa500);
       color: #000;
-      padding: 8px 16px;
-      border-radius: 20px;
+      padding: 10px 20px;
+      border-radius: 25px;
       font-weight: bold;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+      transition: all 0.3s ease;
     }
+
+    .project-btn:hover {
+      background: linear-gradient(135deg, #ffea75, #ffd700);
+      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.7);
+      transform: translateY(-2px);
+    }
+
     .contact-box {
-      background: #181820;
-      padding: 18px;
-      border-radius: 12px;
-      border: 1px solid #262633;
+      padding: 22px;
     }
+
     .contact-box p {
-      margin-bottom: 6px;
-      color: #d1d1d6;
+      margin-bottom: 10px;
+      color: #e5e5e7;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+
+    .contact-box a {
+      color: #7df9ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      text-shadow: 0 0 8px rgba(125, 249, 255, 0.4);
+    }
+
+    .contact-box a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 15px rgba(125, 249, 255, 0.9);
     }
   </style>
 </head>
 <body>
-
   <div class="container">
     
     <!-- Header -->
     <header>
-      <h1>Neelam</h1>
+      <h1>
+        <span>N</span><span>E</span><span>E</span><span>L</span><span>A</span><span>M</span>
+      </h1>
       <p class="subtitle">3D Visualization Artist & Product Designer</p>
       <p class="bio">Specializing in high-end 3D Perfume Bottle Design, Glass Shaders, and Luxury Packaging.</p>
     </header>
@@ -140,7 +271,7 @@
         <img src="myperfume.jpg" alt="Petal Glow Perfume">
         <div class="project-info">
           <div class="project-title">Petal Glow 🌸 — 3D Luxury Perfume Render</div>
-          <p style="color:#a1a1aa; font-size:0.85rem; margin-top:4px;">Twisted sculptural glass design with animation preview.</p>
+          <p style="color:#d1d1d6; font-size:0.9rem; margin-top:6px;">Twisted sculptural glass design with animation preview.</p>
           <span class="project-btn">View 3D Project →</span>
         </div>
       </a>
@@ -150,11 +281,11 @@
     <section>
       <h2>Contact & Links</h2>
       <div class="contact-box">
-      <p><b>WhatsApp:</b> <a href="https://wa.me/923001234567" target="_blank" style="color: #b2ebf2;">92 311 7282288</a></p>
-      <p><b>Instagram:</b> <a href="https://www.instagram.com/n.dgtalent?stkn=MWZndzR5d2hwejFraA==" target="_blank" style="color: #b2ebf2;">View Profile</a></p>
-      <p><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/neelam-tariq-a49045325?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" style="color: #b2ebf2;">View Profile</a></p>
-      <p><b>Facebook:</b> <a href="https://www.facebook.com/share/1cB5ZD4t6x/" target="_blank" style="color: #b2ebf2;">View Profile</a></p>   
-      </div>      
+        <p><b>WhatsApp:</b> <a href="https://wa.me/923001234567" target="_blank">+92 03117282288</a></p>
+        <p><b>Instagram:</b> <a href="https://www.instagram.com/n.dgtalent?stkn=MWZndzR5d2hwejFraA==" target="_blank">View Profile</a></p>
+        <p><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/neelam-tariq-a49045325?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">View Profile</a></p>
+        <p><b>Facebook:</b> <a href="https://www.facebook.com/share/1cB5ZD4t6x/" target="_blank">View Profile</a></p>   
+      </div>     
     </section>
 
   </div>
